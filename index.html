@@ -67,6 +67,7 @@
       margin: 16px auto 12px; max-width: 16ch;
     }
     .hero h1 em { font-style: normal; color: var(--brand); }
+    .hero .vegan { display: inline-block; margin: 0 0 14px; padding: 6px 18px; border-radius: 999px; background: var(--brand); color: #fff; font-weight: 800; font-size: 1.15rem; }
     .hero p { color: var(--muted); max-width: 52ch; margin: 0 auto; font-size: 1.05rem; }
 
     /* Products */
@@ -140,6 +141,7 @@
     <section class="hero wrap">
       <span class="tag">🌶️ Bánh tráng trộn đóng gói sẵn</span>
       <h1>Mở túi, trộn đều, <em>ăn liền</em> tay!</h1>
+      <div class="vegan">🌱 Chay mặn đều dùng được</div>
       <p>Bánh tráng dẻo, sốt đậm đà, hành phi giòn rụm – mỗi túi đều có đủ topping và sốt chia riêng để giữ trọn hương vị.</p>
     </section>
 
@@ -184,9 +186,9 @@
     // Danh sách sản phẩm – sửa tên, mô tả, giá tại đây.
     const products = [
       {
-        name: "Bánh tráng muối tôm - hành phi",
-        desc: "Bánh tráng dẻo, muối tôm cay nhẹ, hành phi thơm giòn.",
-        chips: ["Muối tôm", "Hành phi","Tắc"],
+        name: "Bánh tráng Muối chay - hành phi",
+        desc: "Bánh tráng dẻo, Muối chay cay nhẹ, hành phi thơm giòn.",
+        chips: ["Muối chay", "Hành phi","Tắc"],
         price: "Liên hệ",
         badge: "Cổ điển",
         img: "assets/1.jpg",
@@ -194,7 +196,7 @@
       {
         name: "Bánh tráng bơ - sốt me",
         desc: "Sốt bơ béo ngậy hòa cùng sốt me chua ngọt, ăn là ghiền.",
-        chips: ["Bơ", "Sốt me","Muối tôm", "Hành phi"],
+        chips: ["Bơ", "Sốt me","Muối chay", "Hành phi"],
         price: "Liên hệ",
         badge: "Béo ngậy",
         img: "assets/2.jpg",
@@ -202,7 +204,7 @@
       {
         name: "Bánh tráng ớt rim mật ong - sốt me",
         desc: "Ớt rim mật ong cay ngọt quyện sốt me chua ngọt đậm đà.",
-        chips: ["Ớt rim mật ong", "Sốt me","Muối tôm", "Hành phi"],
+        chips: ["Ớt rim mật ong", "Sốt me","Muối chay", "Hành phi"],
         price: "Liên hệ",
         badge: "Cay ngọt",
         img: "assets/3.jpg",
@@ -210,7 +212,7 @@
       {
         name: "Bánh tráng ớt rim mật ong",
         desc: "Ớt rim mật ong cay ngọt hài hòa, thơm nhẹ vị mật.",
-        chips: ["Ớt rim mật ong","Muối tôm", "Hành phi","Dầu tỏi","Tắc"],
+        chips: ["Ớt rim mật ong","Muối chay", "Hành phi","Dầu tỏi","Tắc"],
         price: "Liên hệ",
         badge: "Cay ngọt",
         img: "assets/4.jpg",
@@ -218,7 +220,7 @@
       {
         name: "Bánh tráng sate ớt - tỏi phi",
         desc: "Sate ớt cay nồng, tỏi phi vàng thơm giòn.",
-        chips: ["Sate ớt", "Muối tôm", "Hành phi","Dầu tỏi","Tắc"],
+        chips: ["Sate ớt", "Muối chay", "Hành phi","Dầu tỏi","Tắc"],
         price: "Liên hệ",
         badge: "Cay nồng",
         img: "assets/5.jpg",
