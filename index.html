@@ -99,11 +99,15 @@
     .card-body p { margin: 0; color: var(--muted); font-size: .93rem; }
     .chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
     .chip { font-size: .76rem; padding: 3px 9px; border-radius: 999px; background: #f6ecdd; color: var(--muted); }
-    .card-foot { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 10px; }
+    .card-foot { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 10px; }
     .price { font-weight: 700; font-size: 1.1rem; color: var(--brand-dark); }
     .card-foot .btn { padding: 8px 16px; font-size: .9rem; }
 
     /* Why us */
+    .care-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .care-item { padding: 20px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
+    .care-item .ico { font-size: 1.8rem; }
+    .care-item p { margin: 8px 0 0; color: var(--muted); font-size: .95rem; }
     .why { background: var(--surface); border-block: 1px solid var(--line); }
     .why-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
     .why-item { padding: 20px; border-radius: var(--radius); background: var(--bg); }
@@ -146,9 +150,19 @@
     <section id="san-pham" class="section wrap">
       <div class="section-head">
         <h2>Sản phẩm của SiMon</h2>
-        <p>5 vị bánh tráng – chọn vị bạn mê nhất</p>
+        <p>Bánh tráng và top mỡ – chọn món bạn mê nhất</p>
       </div>
       <div class="grid" id="product-grid"></div>
+    </section>
+
+    <section id="bao-quan" class="section wrap">
+      <div class="section-head"><h2>Cách bảo quản bánh tráng</h2></div>
+      <div class="care-grid">
+        <div class="care-item"><p>Bánh để được 10-15 ngày nhiệt độ thoáng mát, 1-2 tháng trong tủ lạnh.</p></div>
+        <div class="care-item"><p>Bánh phơi sương hạn chế gió, quạt, máy lạnh vì sẽ làm bánh cứng.</p></div>
+        <div class="care-item"><p>Bánh vò trực tiếp trong bịch sẽ thấm và ngon hơn trong tô/thau.</p></div>
+        <div class="care-item"><p>Nếu bánh khô, vẩy xíu nước hoặc vò/trộn với tắc trước, bánh sẽ mềm dẻo ngon bình thường.</p></div>
+      </div>
     </section>
 
     <section id="lien-he" class="section wrap contact">
@@ -171,7 +185,7 @@
     // Danh sách sản phẩm – sửa tên, mô tả, giá tại đây.
     const products = [
       {
-        name: "Bánh tráng Muối chay - hành phi",
+        name: "Bánh tráng Muối - Hành phi",
         desc: "Bánh tráng dẻo, Muối chay, hành phi thơm giòn.",
         chips: ["Muối chay", "Hành phi","Tắc"],
         price: "12.000đ",
@@ -209,6 +223,30 @@
         price: "15.000đ",
         badge: "Cay nồng",
         img: "assets/5.jpg",
+      },
+      {
+        name: "Bánh Lá trộn tỏi",
+        desc: "Bánh lá trộn tỏi thơm giòn, cay nhẹ đậm vị.",
+        chips: ["Hành phi", "Tỏi phi", "Muối chay", ],
+        price: "25.000đ",
+        badge: "Cay vừa",
+        img: "assets/6.jpg",
+      },
+      {
+        name: "Tóp mỡ thêm",
+        desc: "Tóp mỡ mắm tỏi giòn thơm, thêm vào bánh tráng cho đậm vị.",
+        chips: ["Top mỡ","Topping"],
+        price: "5.000đ",
+        badge: "Nên thử",
+        img: "assets/7.jpg",
+      },
+      {
+        name: "Top mỡ mắm tỏi",
+        desc: "Top mỡ mắm tỏi giòn thơm đóng gói, mua nhiều dùng dần.",
+        chips: ["Top mỡ", "100gr", "200gr"],
+        price: "40.000đ</br>80.000đ",
+        badge: "",
+        img: "assets/8.jpg",
       },
     ];
 
