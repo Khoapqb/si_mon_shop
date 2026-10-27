@@ -96,6 +96,13 @@
       position: absolute; top: 12px; left: 12px; padding: 4px 10px; border-radius: 999px;
       background: var(--brand); color: #fff; font-size: .78rem; font-weight: 600;
     }
+    .promo-flag {
+      position: absolute; top: 0; right: 12px; z-index: 1;
+      padding: 6px 10px 12px;
+      background: var(--brand); color: #fff; font-size: .78rem; font-weight: 700;
+      line-height: 1.1; pointer-events: none;
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 50% calc(100% - 8px), 0 100%);
+    }
     .card-body { padding: 16px 18px 18px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
     .card-body h3 { margin: 0; font-size: 1.12rem; line-height: 1.3; }
     .card-body p { margin: 0; color: var(--muted); font-size: .93rem; }
@@ -134,7 +141,7 @@
 <body>
   <header>
     <div class="wrap nav">
-      <a class="logo" href="#"><img src="assets/logo.png" alt="SiMon Shop" width="70" height="70">SiMon<span>Shop</span></a>
+      <a class="logo" href="#"><img src="assets/logo.webp" alt="SiMon Shop" width="70" height="70">SiMon<span>Shop</span></a>
       <nav class="nav-links">
         <a href="#san-pham">Sản phẩm</a>
         <a class="btn" href="#lien-he">Đặt hàng</a>
@@ -161,8 +168,8 @@
       <div class="section-head"><h2>Cách bảo quản bánh tráng</h2></div>
       <div class="care-grid">
         <div class="care-item"><p>Bánh để được 10-15 ngày nhiệt độ thoáng mát, 1-2 tháng trong tủ lạnh.</p></div>
-        <div class="care-item"><p>Bánh phơi sương hạn chế gió, quạt, máy lạnh vì sẽ làm bánh cứng.</p></div>
         <div class="care-item"><p>Bánh vò trực tiếp trong bịch sẽ thấm và ngon hơn trong tô/thau.</p></div>
+        <div class="care-item"><p>Bánh phơi sương hạn chế gió, quạt, máy lạnh vì sẽ làm bánh cứng.</p></div>
         <div class="care-item"><p>Nếu bánh khô, vẩy xíu nước hoặc vò/trộn với tắc trước, bánh sẽ mềm dẻo ngon bình thường.</p></div>
       </div>
     </section>
@@ -192,7 +199,8 @@
         chips: ["Muối chay", "Hành phi","Tắc"],
         price: "12.000đ",
         badge: "Cổ điển",
-        img: "assets/1.jpg",
+        promo: "10 tặng 1",
+        img: "assets/1.webp",
       },
       {
         name: "Bánh tráng bơ - sốt me",
@@ -200,7 +208,8 @@
         chips: ["Bơ", "Sốt me","Muối chay", "Hành phi"],
         price: "17.000đ",
         badge: "Béo ngậy",
-        img: "assets/2.jpg",
+        promo: "10 tặng 1",
+        img: "assets/2.webp",
       },
       {
         name: "Bánh tráng ớt rim mật ong - sốt me",
@@ -208,7 +217,8 @@
         chips: ["Ớt rim mật ong", "Sốt me","Muối chay", "Hành phi"],
         price: "15.000đ",
         badge: "Cay ngọt",
-        img: "assets/3.jpg",
+        promo: "10 tặng 1",
+        img: "assets/3.webp",
       },
       {
         name: "Bánh tráng ớt rim mật ong",
@@ -216,7 +226,8 @@
         chips: ["Ớt rim mật ong","Muối chay", "Hành phi","Dầu tỏi","Tắc"],
         price: "15.000đ",
         badge: "Cay ngọt",
-        img: "assets/4.jpg",
+        promo: "10 tặng 1",
+        img: "assets/4.webp",
       },
       {
         name: "Bánh tráng sate ớt - tỏi phi",
@@ -224,7 +235,8 @@
         chips: ["Sate ớt", "Muối chay", "Hành phi","Dầu tỏi","Tắc"],
         price: "15.000đ",
         badge: "Cay nồng",
-        img: "assets/5.jpg",
+        promo: "10 tặng 1",
+        img: "assets/5.webp",
       },
       {
         name: "Bánh Lá trộn tỏi",
@@ -232,7 +244,8 @@
         chips: ["Hành phi", "Tỏi phi", "Muối chay", ],
         price: "25.000đ",
         badge: "Cay vừa",
-        img: "assets/6.jpg",
+        promo: "",
+        img: "assets/6.webp",
       },
       {
         name: "Tóp mỡ thêm",
@@ -240,7 +253,7 @@
         chips: ["Top mỡ","Topping"],
         price: "5.000đ",
         badge: "Nên thử",
-        img: "assets/7.jpg",
+        img: "assets/7.webp",
       },
       {
         name: "Top mỡ mắm tỏi",
@@ -248,7 +261,7 @@
         chips: ["Top mỡ", "100gr", "200gr"],
         price: "40.000đ</br>80.000đ",
         badge: "",
-        img: "assets/8.jpg",
+        img: "assets/8.webp",
       },
     ];
 
@@ -256,8 +269,9 @@
     grid.innerHTML = products.map((p, i) => `
       <article class="card">
         <div class="card-media">
-          <img src="${p.img}" alt="${p.name}" width="600" height="600" ${i > 1 ? 'loading="lazy"' : ""}>
+          <img src="${p.img}" alt="${p.name}" width="1000" height="1000" ${i > 1 ? 'loading="lazy"' : ""}>
           ${p.badge ? `<span class="badge">${p.badge}</span>` : ""}
+          ${p.promo ? `<span class="promo-flag">${p.promo}</span>` : ""}
         </div>
         <div class="card-body">
           <h3>${p.name}</h3>
